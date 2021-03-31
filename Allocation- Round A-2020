@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void bubblesort(int a[], int n )
+{
+    int temp;
+    for(int i=0;i<n-1;i++)
+    {
+        for (int j=0;j<n-1-i;j++)
+        {
+           if (a[j]>a[j+1])
+           {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+           }
+        }
+    }
+}
+
+int main()
+{
+ int a[100000],d,n,b,j,h=0;
+ int tc , t;
+ int i;
+ scanf("%d",&tc);
+ for (t=1;t<=tc;t++)
+ {
+   scanf("%d %d ",&n,&b);
+
+   for (j=0;j<n;j++)
+   {
+       scanf("%d",&a[j]);
+   }
+   bubblesort(a,n);
+   for(j=0;j<n;j++)
+   {
+       if(b>=a[j])
+       {
+           b-=a[j];
+
+           h++;
+
+       }
+
+   }
+ printf("Case #%d: %d\n",t,h);
+ h=0;
+
+
+ }
+
+
+}
+
+
+
